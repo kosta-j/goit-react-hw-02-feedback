@@ -1,5 +1,5 @@
 import StatisticsItem from '../StatisticsItem/StatisticsItem';
-import s from './StatisticsList.module.css';
+import s from './Statistics.module.css';
 
 export default function StatisticsList() {
   return (
