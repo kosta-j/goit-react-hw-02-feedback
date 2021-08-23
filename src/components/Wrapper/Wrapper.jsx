@@ -2,7 +2,6 @@ import { Component } from 'react';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Section from '../Section/Section';
 import Statistics from '../Statistics/Statistics';
-import Title from '../Title/Title';
 
 class Wrapper extends Component {
   state = {
@@ -40,15 +39,13 @@ class Wrapper extends Component {
 
     return (
       <div>
-        <Section>
-          <Title title="Please leave feedback" />
+        <Section title="Please leave feedback">
           <FeedbackOptions
             options={options}
             onLeaveFeedback={this.onLeaveFeedbackHandler}
           />
         </Section>
-        <Section>
-          <Title title="Statistics" />
+        <Section title="Statistics">
           <Statistics
             good={good}
             neutral={neutral}

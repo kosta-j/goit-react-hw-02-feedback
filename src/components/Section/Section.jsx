@@ -1,9 +1,10 @@
 import s from './Section.module.css';
+import Title from '../Title/Title';
 
-export default function Section({ children }) {
+export default function Section({ title, children }) {
   return (
     <section className={s.section}>
-      <p>Section:</p>
+      <Title title={title} />
       {children}
     </section>
   );
