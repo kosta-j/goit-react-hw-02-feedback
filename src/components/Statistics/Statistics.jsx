@@ -3,11 +3,9 @@ import s from './Statistics.module.css';
 
 export default function Statistics(props) {
   const { good, neutral, bad, total, positivePercentage } = props;
-  {
-  }
+
   return (
     <ul className={s.statistics}>
-      {console.log(Object.entries(props))}
       <li className={s.item}>
         <StatisticsItem name="Good" value={good} />
       </li>
