@@ -1,17 +1,31 @@
 import StatisticsItem from '../StatisticsItem/StatisticsItem';
 import s from './Statistics.module.css';
 
-export default function StatisticsList() {
+export default function Statistics(props) {
+  const { good, neutral, bad, total, positivePercentage } = props;
+  {
+  }
   return (
-    <ul className={s.statisticsList}>
+    <ul className={s.statistics}>
+      {console.log(Object.entries(props))}
       <li className={s.item}>
-        <StatisticsItem name="Good" quantity="3" />
+        <StatisticsItem name="Good" value={good} />
       </li>
       <li className={s.item}>
-        <StatisticsItem name="Neutral" quantity="2" />
+        <StatisticsItem name="Neutral" value={neutral} />
       </li>
       <li className={s.item}>
-        <StatisticsItem name="Bad" quantity="2" />
+        <StatisticsItem name="Bad" value={bad} />
+      </li>
+      <li className={s.item}>
+        <StatisticsItem name="Total" value={total} />
+      </li>
+      <li className={s.item}>
+        <StatisticsItem
+          name="Positive feedback"
+          value={positivePercentage}
+          percents={true}
+        />
       </li>
     </ul>
   );
