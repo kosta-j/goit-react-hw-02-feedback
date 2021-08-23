@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+import Notification from '../Notification/Notification';
 import Section from '../Section/Section';
 import Statistics from '../Statistics/Statistics';
 
@@ -17,10 +18,6 @@ class Wrapper extends Component {
   countPositiveFeedbackPercentage = () => {
     const { good } = this.state;
     const total = this.countTotalFeedback();
-
-    if (total < 1) {
-      return 0;
-    }
 
     return Math.round((good / total) * 100);
   };
@@ -46,13 +43,17 @@ class Wrapper extends Component {
           />
         </Section>
         <Section title="Statistics">
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={positivePercentage}
-          />
+          {total > 0 ? (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          ) : (
+            <Notification message="No feedback given" />
+          )}
         </Section>
       </div>
     );
